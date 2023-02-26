@@ -1,0 +1,174 @@
+/* Nunito font regular */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap');
+
+/* Nunito font bold */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,400&display=swap');
+
+:root {
+    --primary: #4E60FF;
+    --primary-light: #F3F4FF;
+    --white: #fff;
+    --dark: #2B2B43;
+    --grey: #83859C;
+    --grey-darker: #545563;
+    --grey-light: #C7C8D2;
+    --grey-lightest: #EDEEF2;
+    --error: #FF5C60;
+
+    --breakpoint-mobile: 768px;
+    --breakpoint-desktop: 1110px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: var(--breakpoint-desktop);
+}
+
+.products__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.product__card {
+    border: 1px solid var(--grey-lightest);
+    border-radius: 16px;
+}
+
+.card__preview {
+    position: relative;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    border-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.card__preview--badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    padding: 8px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    color: var(--white);
+    text-transform: uppercase;
+    border-radius: 0 16px;
+    background-color: var(--primary);
+}
+
+.card__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.card__content--title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.card__content--info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 14px;
+}
+
+.card__content--cook-time, .card__content--price {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 12px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 16px;
+    color: var(--grey);
+}
+
+.card__content--tag-dot {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.card__content--hashtags {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.card__content--hashtag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    border-radius: 100px;
+    color: var(--grey-darker);
+    background-color: var(--grey-lightest);
+    margin-right: 8px;
+}
+
+.card__content--hashtag img {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+}
+
+.card__content--bag {
+    position: relative;
+}
+
+.card__content--bag svg {
+    width: 20px;
+    height: 20px;
+}
+
+.card__content--bag-count {
+    position: absolute;
+    top: -12px;
+    right: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--primary);
+    padding: 2px;
+    min-width: 14px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Here you can define styles how to change on mobile  */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .products__list {
+        grid-template-columns: 1fr;
+    }
+}
